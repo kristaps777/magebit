@@ -26,9 +26,9 @@ class Connect
         global $dbStatusOk;
         session_start();
         if (!$this->connectDB()) {
-            echo $dbStatusNok;
+            $_SESSION['dbStatus'] = $dbStatusNok;
         } else {
-            echo $dbStatusOk;
+            $_SESSION['dbStatus'] = $dbStatusOk;
 
             $this->sql_request = "SELECT id, name FROM users WHERE email = '$_SESSION[email]' AND pwhash = '$_SESSION[pwhash]'";
             $this->send_sql = $this->connectDB()->query($this->sql_request);
@@ -37,50 +37,51 @@ class Connect
             $_SESSION['userID'] = $row['id'];
             $_SESSION['name'] = $row['name'];
             }
-            echo "<div>Hello, " . $_SESSION['name'] . "!</div>";
-            echo "<div>Your unique ID is " . $_SESSION['userID'];
             mysqli_close($this->connectDB());
         }
     }
 
     public function checkEmpty() {
         session_start();
-        if (empty($_SESSION['email'])) {
+        if (empty($_SESSION['pwhash'])) {
         header("Location: index.html");
         }
     }
 
     public function getData() {
         session_start();
-        $this->sql_request = "SELECT * FROM todo_list WHERE userID = '$_SESSION[userID]'  ORDER BY task ASC";
+        $this->sql_request = "SELECT * FROM attributes WHERE userID = '$_SESSION[userID]' ORDER BY name ASC";
         $this->send_sql = $this->connectDB()->query($this->sql_request);
         $this->sql_response = $this->send_sql->fetch_all(MYSQLI_ASSOC);
 
+        echo "<li>Name: $_SESSION[name]</li>";
+        echo "<li>Email: $_SESSION[email]</li>";
+        echo "<li>DB status: $_SESSION[dbStatus]</li>";
         foreach ($this->sql_response as $key => $row) {
-        echo "<li class='todo_list_item'>";
+        echo "<li>$row[name]: $row[value]</li>";
         
-        echo "<form id='edit' class='task_area' action='../private/edit_todo.php' method='post'>";
-        echo "<input type='hidden' name='ident' value={$row[id]}>";
-        echo "<input class='td_entry_edit' name='edit' type='text' maxlength='60' spellcheck='false' value='";
-        echo $row['task'];
-        echo "'>";
-        echo "<button type='submit'>";
-        echo "<span><i class='fas fa-edit'></i></span>";
-        echo "</button>";
-        echo "</form>";
+        // echo "<form id='edit' class='task_area' action='../private/edit_todo.php' method='post'>";
+        // echo "<input type='hidden' name='ident' value={$row[id]}>";
+        // echo "<input class='td_entry_edit' name='edit' type='text' maxlength='60' spellcheck='false' value='";
+        // echo $row['task'];
+        // echo "'>";
+        // echo "<button type='submit'>";
+        // echo "<span><i class='fas fa-edit'></i></span>";
+        // echo "</button>";
+        // echo "</form>";
 
-        echo "<div class='buttons'>";
+        // echo "<div class='buttons'>";
 
-        echo "<form class='delete_button' action='../private/delete_todo.php' method='post'>";
-        echo "<input type='hidden' name='ident' value={$row[id]}>";
-        echo "<button type='submit'>";
-        echo "<span><i class='fas fa-trash-alt'></i></span>";
-        echo "</button>";
-        echo "</form>";
+        // echo "<form class='delete_button' action='../private/delete_todo.php' method='post'>";
+        // echo "<input type='hidden' name='ident' value={$row[id]}>";
+        // echo "<button type='submit'>";
+        // echo "<span><i class='fas fa-trash-alt'></i></span>";
+        // echo "</button>";
+        // echo "</form>";
 
-        echo "</div>";
+        // echo "</div>";
 
-        echo "</li>";
+        // echo "</li>";
 
         mysqli_close($this->connectDB());
     }

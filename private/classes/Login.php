@@ -30,6 +30,7 @@ class Login extends Connect
         } else {
         $_SESSION['email'] = $this->userEmail;
         $_SESSION['pwhash'] = $this->sql_row['pwhash'];
+        $_SESSION['name'] = $this->sql_row['name'];
         header("Location: ../public/display.php");
 
         }

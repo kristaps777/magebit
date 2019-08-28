@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +19,9 @@
 
     <body>
 
-
-
-    
-
         <main>
 
-            <div class="display_container">
+            <section class="display_container">
 
                 <?php
                             require_once('../private/classes/Connect.php');
@@ -35,9 +30,30 @@
                             $status = new Connect();
                             $status->getStatus();
                         ?>
-    <a href="../private/logout_user.php">LOG OUT</a>
 
-            </div>
+
+                <div class="profile_info">
+                    <ul class="stats">
+                        <?php
+                            require_once('../private/classes/Connect.php');
+                            $userStats = new Connect();
+                            $userStats->getData();
+                        ?>
+                    </ul>
+                </div>
+                <div class="add_attribute">
+                    <form action="../private/new_attribute.php" method="post" class="attribute_form">
+                        <input name="attr_name" id="attr_name" type="text" placeholder="Enter attribute name..." maxlength="30" spellcheck="false" autocomplete="off" required>
+                        <input name="attr_value" id="attr_value" type="text" placeholder="Enter attribute value..." maxlength="30" spellcheck="false" autocomplete="off" required>
+                        <button type="submit">ADD ATTRIBUTE</button>
+                    </form>
+
+                <a href="../private/logout_user.php">LOG OUT</a>
+                </div>
+
+                
+
+            </section>
 
         </main>
 

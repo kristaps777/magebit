@@ -38,8 +38,69 @@ main {
 
 .display_container {
     width: 60%;
-    height: 55%;
+    height: 75%;
     position: relative;
-    display: block;
+    display: flex;
     background-color: rgba(15, 26, 47, 0.9);
+}
+
+.profile_info,
+.add_attribute {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_attribute {
+    flex-direction: column;
+}
+
+.attribute_form {
+    display: grid;
+    gap: 1em;
+    margin-bottom: 20px;
+}
+
+input {
+    border-radius: 20px;
+    border: none;
+    height: 30px;
+    padding-left: 10px;
+    outline: none;
+}
+
+  input::-webkit-input-placeholder {
+    font-style: italic;
+    color: grey;
+  }
+  
+  input:-ms-input-placeholder {
+    font-style: italic;
+    color: grey;
+  }
+  
+  input::placeholder {
+    font-style: italic;
+    color: grey;
+  }
+
+.stats {
+    display: grid;
+    gap: 1em;
+    overflow-y: auto;
+    height: 60%;
+    width: 80%;
+    grid-auto-rows: max-content;
+}
+
+.stats::-webkit-scrollbar {
+    width: .5em;
+}
+
+
+.stats::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
