@@ -39,7 +39,8 @@
                             <h2>Don't have an account?</h2>
                             <hr>
                             <p>Take a minute and register!</p>
-                            <button id="signin" type="button" onclick="moveBack()">sign-up</button>
+                            <button id="signin" class="signup_button" type="button" onclick="moveBack()">sign
+                                up</button>
                         </div>
 
                     </div>
@@ -50,7 +51,7 @@
                             <h2>Have an account?</h2>
                             <hr>
                             <p>Log into your profile!</p>
-                            <button id="login" type="button" onclick="move()">login</button>
+                            <button id="login" class="signup_button" type="button" onclick="move()">login</button>
                         </div>
 
                     </div>
@@ -62,28 +63,45 @@
                     <form action="login_user.php" method="post" id="login_form" class="form_data">
                         <h2>Login</h2>
                         <hr>
-                        <input name="username" id="username" type="text" placeholder="username" spellcheck="false"
-                            minlength="8" maxlength="30" autocomplete="off" required>
-                        <input name="password" id="password" type="password" placeholder="password" spellcheck="false"
-                            minlength="8" maxlength="30" required>
-                        <button class="orange margin_top" type="submit">login</button>
+                        <div class="user_content">
+                            <div class="user_data">
+                                <input name="username" id="username" type="text" placeholder="Email" spellcheck="false"
+                                    minlength="8" maxlength="30" autocomplete="off" required>
+                                <div class="icon"><img src="img/ic_mail.svg" alt="mail icon"></div>
+                            </div>
+                            <div class="user_data">
+                                <input name="password" id="password" type="password" placeholder="Password"
+                                    spellcheck="false" minlength="8" maxlength="30" required>
+                                <div class="icon"><img src="img/ic_lock.svg" alt="mail icon"></div>
+                            </div>
+
+                            <button class="orange margin_top" type="submit">login</button>
+                        </div>
                     </form>
 
                     <form id="register_form" class="inactive" action="../private/new_user.php" method="post">
                         <h2>Register</h2>
                         <hr>
-                        <input name="name" type="text" placeholder="name" spellcheck="false" minlength="8"
-                            maxlength="30" autocomplete="off" required>
-                        <input name="username" type="text" placeholder="username" spellcheck="false" minlength="8"
-                            maxlength="30" autocomplete="off" required>
-                        <input name="password" type="password" placeholder="password" spellcheck="false" minlength="8"
-                            maxlength="30" required>
-                        <button class="orange margin_top" type="submit">register</button>
-
+                        <div class="user_content">
+                            <div class="user_data">
+                                <input name="name" type="text" placeholder="Name" spellcheck="false" minlength="8"
+                                    maxlength="30" autocomplete="off" required>
+                                <div class="icon"><img src="img/ic_user.svg" alt="mail icon"></div>
+                            </div>
+                            <div class="user_data">
+                                <input name="username" type="text" placeholder="Email" spellcheck="false" minlength="8"
+                                    maxlength="30" autocomplete="off" required>
+                                <div class="icon"><img src="img/ic_mail.svg" alt="mail icon"></div>
+                            </div>
+                            <div class="user_data">
+                                <input name="password" type="password" placeholder="Password" spellcheck="false"
+                                    minlength="8" maxlength="30" required>
+                                <div class="icon"><img src="img/ic_lock.svg" alt="mail icon"></div>
+                            </div>
+                            <button class="orange margin_top" type="submit">register</button>
+                        </div>
                     </form>
-
                 </div>
-
             </div>
 
 
@@ -100,8 +118,8 @@
                             <p>Login or register!</p>
                             <button id="login_mobile" class="button_mobile margin_bottom" type="button"
                                 onclick="displLogMob()">login</button>
-                            <button id="signup_mobile" class="button_mobile" type="button"
-                                onclick="displRegMob()">sign-up</button>
+                            <button id="signup_mobile" class="button_mobile" type="button" onclick="displRegMob()">sign
+                                up</button>
                         </div>
 
                     </div>
@@ -125,14 +143,24 @@
                                 method="post">
                                 <h2>Register</h2>
                                 <hr>
-                                <input name="name" type="text" placeholder="name" spellcheck="false" minlength="8"
-                                    maxlength="30" autocomplete="off" required>
-                                <input name="username" type="text" placeholder="username" spellcheck="false"
-                                    minlength="8" maxlength="30" autocomplete="off" required>
-                                <input name="password" type="password" placeholder="password" spellcheck="false"
-                                    minlength="8" maxlength="30" autocomplete="off" required>
-                                <button class="button_mobile orange margin_top" type="submit">register</button>
-
+                                <div class="user_content">
+                                    <div class="user_data">
+                                        <input name="name" type="text" placeholder="Name" spellcheck="false"
+                                            minlength="8" maxlength="30" autocomplete="off" required>
+                                        <div class="icon"><img src="img/ic_user.svg" alt="mail icon"></div>
+                                    </div>
+                                    <div class="user_data">
+                                        <input name="username" type="text" placeholder="Email" spellcheck="false"
+                                            minlength="8" maxlength="30" autocomplete="off" required>
+                                        <div class="icon"><img src="img/ic_mail.svg" alt="mail icon"></div>
+                                    </div>
+                                    <div class="user_data">
+                                        <input name="password" type="password" placeholder="Password" spellcheck="false"
+                                            minlength="8" maxlength="30" required>
+                                        <div class="icon"><img src="img/ic_lock.svg" alt="mail icon"></div>
+                                    </div>
+                                    <button class="button_mobile orange margin_top" type="submit">register</button>
+                                </div>
                             </form>
 
                         </div>
@@ -142,6 +170,8 @@
                 </div>
 
             </div>
+
+            <footer>all rights reserved "magebit" 2016.</footer>
 
         </main>
 

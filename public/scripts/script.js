@@ -5,6 +5,7 @@ function move() {
     moveForm.style.transform = ('translateX(95%)')
     regForm.setAttribute('class', 'inactive');
     loginForm.setAttribute('class', 'form_data');
+    loginForm.classList.add('animation');
 };
 
 function moveBack() {
@@ -13,6 +14,7 @@ function moveBack() {
     const loginForm = document.getElementById('login_form');
     moveFormB.style.transform = ('translateX(5%)')
     regForm.setAttribute('class', 'form_data');
+    regForm.classList.add('animation');
     loginForm.setAttribute('class', 'inactive');
 };
 
