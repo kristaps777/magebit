@@ -8,7 +8,7 @@
 
 body {
     height: 100vh;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     color: white;
 }
 
@@ -85,6 +85,36 @@ input {
     font-style: italic;
     color: grey;
   }
+
+  button {
+    -moz-border-radius: 28px;
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    display: block;
+    cursor: pointer;
+    font-size: .8em;
+    padding: 16px 31px;
+    text-transform: uppercase;
+    color: white;
+    width: 150px;
+    align-self: flex-start;
+}
+
+
+.orange {
+    background-color: orange;
+    border: none;
+}
+
+button:active {
+    position: relative;
+    top: 1px;
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
 
 .stats {
     display: grid;

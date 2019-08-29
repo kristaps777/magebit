@@ -16,7 +16,7 @@ a {
 
 body {
     height: 100vh;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 main {
@@ -192,10 +192,29 @@ input {
     padding-left: 10px;
     background: none;
     color: white;
+    padding-top: 25px;
 }
 
 input:focus, button:focus {
     outline: none;
+}
+
+input:focus+label,
+input:valid+label {
+    transform: scale(.8) translateY(-30%);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+label {
+    position: absolute;
+    transform: translateY(30%);
+    transition: .2s linear;
+}
+
+.asterisk {
+    color: red;
+    font-size: 1.4em;
 }
 
 footer {
