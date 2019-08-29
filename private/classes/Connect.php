@@ -56,33 +56,9 @@ class Connect
 
         echo "<li>Name: $_SESSION[name]</li>";
         echo "<li>Email: $_SESSION[email]</li>";
-        echo "<li>DB status: $_SESSION[dbStatus]</li>";
+        // echo "<li>DB status: $_SESSION[dbStatus]</li>";
         foreach ($this->sql_response as $key => $row) {
         echo "<li>$row[name]: $row[value]</li>";
-        
-        // echo "<form id='edit' class='task_area' action='../private/edit_todo.php' method='post'>";
-        // echo "<input type='hidden' name='ident' value={$row[id]}>";
-        // echo "<input class='td_entry_edit' name='edit' type='text' maxlength='60' spellcheck='false' value='";
-        // echo $row['task'];
-        // echo "'>";
-        // echo "<button type='submit'>";
-        // echo "<span><i class='fas fa-edit'></i></span>";
-        // echo "</button>";
-        // echo "</form>";
-
-        // echo "<div class='buttons'>";
-
-        // echo "<form class='delete_button' action='../private/delete_todo.php' method='post'>";
-        // echo "<input type='hidden' name='ident' value={$row[id]}>";
-        // echo "<button type='submit'>";
-        // echo "<span><i class='fas fa-trash-alt'></i></span>";
-        // echo "</button>";
-        // echo "</form>";
-
-        // echo "</div>";
-
-        // echo "</li>";
-
         mysqli_close($this->connectDB());
     }
     }

@@ -104,7 +104,6 @@ body:before {
 }
 
 .form_front_mobile {
-    /* background-color: rgba(255, 255, 255, 0.4); */
     width: 100%;
     height: 100%;
     transition: .5s;
@@ -299,49 +298,47 @@ footer {
 }
 
 /* media queries */
-@media(min-width: 576px) {}
-
 @media(min-width: 992px) {
 
-    .form_outer_mobile {
-        display: none;
-    }
+.form_outer_mobile {
+    display: none;
+}
 
-    .form_data {
-        align-items: stretch;
-    }
+.form_data {
+    align-items: stretch;
+}
 
-    .form_outer {
-        width: 60%;
-        height: 55%;
-        position: relative;
-        display: block;
-    }
+.form_outer {
+    width: 60%;
+    height: 55%;
+    position: relative;
+    display: block;
+}
 
-    .form_back {
-        width: 100%;
-        height: 100%;
-        flex-direction: row;
-    }
+.form_back {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+}
 
-    .form_back_left,
+.form_back_left,
 .form_back_right {
-        height: 100%;
-        width: 50%;
-        align-items: center;
+    height: 100%;
+    width: 50%;
+    align-items: center;
 }
 
 .back_left_container,
 .back_right_container {
-        align-items: flex-start;
-        padding: 0;
-        height: 75%;
-        width: 75%;
+    align-items: flex-start;
+    padding: 0;
+    height: 75%;
+    width: 75%;
 }
 
-    .user_content {
-        width: 100%;
-        align-items: flex-start;
+.user_content {
+    width: 100%;
+    align-items: flex-start;
 }
 
 input {
