@@ -258,13 +258,19 @@ footer {
     display: flex;
     align-items: center;
     border-bottom: 1px solid grey;
-    width: 80%;
+    width: 90%;
     justify-content: space-between;
 }
 
 .icon {
     width: fit-content;
     height: fit-content;
+}
+
+.logo {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .inactive {
