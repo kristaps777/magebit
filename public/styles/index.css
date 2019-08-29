@@ -12,6 +12,7 @@ a {
     height: fit-content;
     width: fit-content;
     margin-top: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
@@ -201,15 +202,20 @@ input:focus, button:focus {
 
 input:focus+label,
 input:valid+label {
-    transform: scale(.8) translateY(-30%);
+    transform: scale(.7) translateY(-30%);
     text-transform: uppercase;
     font-weight: bold;
+}
+
+input:focus~svg .cls-1{
+    fill: #49abfe;
 }
 
 label {
     position: absolute;
     transform: translateY(30%);
     transition: .2s linear;
+    pointer-events: none;
 }
 
 .asterisk {
