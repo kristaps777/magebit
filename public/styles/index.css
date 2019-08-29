@@ -91,6 +91,16 @@ body:before {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow:
+        -20px 0px 0px -5px rgba(73,171,254,0.5),
+        -16px 0px 0px -5px rgba(73,171,254,0.5),
+        -12px 0px 0px -6px rgba(73,171,254,0.5),
+        -11px 0px 0px -6px rgba(73,171,254,0.5),
+        -7px 0px 0px -7px rgba(73,171,254,0.5),
+        -6px 0px 0px -7px rgba(73,171,254,0.5),
+        -2px 0px 0px -8px rgba(73,171,254,0.5),
+        -1px 0px 0px -8px rgba(73,171,254,0.5),
+        0px 0px 0px -9px rgba(73,171,254,0.5);
 }
 
 .form_front_mobile {
@@ -169,8 +179,12 @@ button {
 }
 
 .orange {
-    background-color: orange;
+    background-color: #f89a35;
     border: none;
+}
+
+.orange:hover {
+    background-color: #f8bf35;
 }
 
 .signup_button:hover, .button_mobile:hover {
@@ -213,7 +227,7 @@ input:focus~svg .cls-1{
 
 label {
     position: absolute;
-    transform: translateY(30%);
+    transform: translateY(15%);
     transition: .2s linear;
     pointer-events: none;
 }
