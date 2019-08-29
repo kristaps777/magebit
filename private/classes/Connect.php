@@ -24,11 +24,11 @@ class Connect
     public function getStatus() {
         global $dbStatusNok;
         global $dbStatusOk;
-        session_start();
+    
         if (!$this->connectDB()) {
-            $_SESSION['dbStatus'] = $dbStatusNok;
+            $_SESSION['dbStatus'] = $dbStatusNok;       //not used in production
         } else {
-            $_SESSION['dbStatus'] = $dbStatusOk;
+            $_SESSION['dbStatus'] = $dbStatusOk;        //not used in production
 
             $this->sql_request = "SELECT id, name FROM users WHERE email = '$_SESSION[email]' AND pwhash = '$_SESSION[pwhash]'";
             $this->send_sql = $this->connectDB()->query($this->sql_request);
@@ -49,14 +49,12 @@ class Connect
     }
 
     public function getData() {
-        session_start();
         $this->sql_request = "SELECT * FROM attributes WHERE userID = '$_SESSION[userID]' ORDER BY name ASC";
         $this->send_sql = $this->connectDB()->query($this->sql_request);
         $this->sql_response = $this->send_sql->fetch_all(MYSQLI_ASSOC);
 
         echo "<li>Name: $_SESSION[name]</li>";
         echo "<li>Email: $_SESSION[email]</li>";
-        // echo "<li>DB status: $_SESSION[dbStatus]</li>";
         foreach ($this->sql_response as $key => $row) {
         echo "<li>$row[name]: $row[value]</li>";
         mysqli_close($this->connectDB());
