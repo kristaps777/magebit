@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+a {
+    color: white;
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 body {
     height: 100vh;
     font-family: 'Source Sans Pro', sans-serif;
@@ -41,13 +47,14 @@ main {
     height: 75%;
     position: relative;
     display: flex;
+    flex-direction: column;
     background-color: rgba(15, 26, 47, 0.9);
 }
 
 .profile_info,
 .add_attribute {
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,18 +99,30 @@ input {
     border-radius: 28px;
     display: block;
     cursor: pointer;
-    font-size: .8em;
+    font-size: 13px;
     padding: 16px 31px;
     text-transform: uppercase;
     color: white;
-    width: 150px;
+    width: auto;
     align-self: flex-start;
 }
 
+.logout_button {
+    border: 2px solid #49abfe;
+    background-color: transparent;
+}
+
+.logout_button:hover {
+    background-color: #49abfe;
+}
 
 .orange {
-    background-color: orange;
+    background-color:  #f89a35;
     border: none;
+}
+
+.orange:hover {
+    background-color: #f8bf35;
 }
 
 button:active {
@@ -120,7 +139,7 @@ button:focus {
     display: grid;
     gap: 1em;
     overflow-y: auto;
-    height: 60%;
+    height: 80%;
     width: 80%;
     grid-auto-rows: max-content;
 }
@@ -133,4 +152,23 @@ button:focus {
 .stats::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+}
+
+/* media queries */
+@media(min-width: 992px) {
+
+.display_container {
+    flex-direction: row;
+}
+
+.profile_info,
+.add_attribute {
+    width: 50%;
+    height: 100%;
+}
+
+.stats {
+    height: 60%;
+}
+
 }

@@ -46,9 +46,9 @@
                         <input name="attr_name" id="attr_name" type="text" placeholder="Enter attribute name..." maxlength="30" spellcheck="false" autocomplete="off" required>
                         <input name="attr_value" id="attr_value" type="text" placeholder="Enter attribute value..." maxlength="30" spellcheck="false" autocomplete="off" required>
                         <button type="submit" class="orange">ADD ATTRIBUTE</button>
+                        <button type="button" class="logout_button"><a href="../private/logout_user.php">LOG OUT</a></button>
                     </form>
 
-                <a href="../private/logout_user.php">LOG OUT</a>
                 </div>
 
                 

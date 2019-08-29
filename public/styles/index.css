@@ -155,7 +155,7 @@ button {
     border-radius: 28px;
     display: block;
     cursor: pointer;
-    font-size: .8em;
+    font-size: 13px;
     padding: 16px 31px;
     text-transform: uppercase;
     color: white;
@@ -207,6 +207,7 @@ input {
     background: none;
     color: white;
     padding-top: 25px;
+    width: 100%;
 }
 
 input:focus, button:focus {
